@@ -20,7 +20,7 @@ public class Play : MonoBehaviour
     public GameObject shoot;
 
     public float ShootTime = 0;
-    public float Delay = 1;
+    public float Delay = 3;
 
     public UnityEvent onEat;
     private float hpMax;
@@ -45,6 +45,7 @@ public class Play : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
+                ani.SetBool("火球",true);
                 Instantiate(fireball, shoot.transform.position, transform.rotation);
                 ShootTime = Time.time + Delay;
             }
